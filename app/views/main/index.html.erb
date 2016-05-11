@@ -1,0 +1,19 @@
+<div class="header">
+	<h1>Mason Clayton</h1>
+</div>
+<div class="centered-container">
+	<ul class="projects">
+		<% @projects.each do |project| %>
+		<li class="project">
+			<div class="title"><%= project.name %></div>
+			<div class="preview"><img src="<%= asset_path 'test_image.png' %>" alt="<% project.name %> preview image"></div>
+			<div class="description"><%= project.description %></div>
+		</li>
+		<% end %>
+		<!-- kind of a hack but these fills up the remaining space in the last row
+		in order to align the last items to the left-->
+		<li class="last-line-fill"></li>
+		<li class="last-line-fill"></li>
+		<li class="last-line-fill"></li>
+	</ul>
+</div>
