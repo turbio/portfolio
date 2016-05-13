@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Portfolio</title>
-  <meta name="viewport" content="user-scalable=0 initial-scale=1 width=device-width height=device-height maximum-scale=1">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<title>Portfolio</title>
+	<meta name="viewport" content="user-scalable=0 initial-scale=1 width=device-width height=device-height maximum-scale=1">
+	<% if params['style'] == 'plain' %>
+		<%= stylesheet_link_tag 'plain', media: 'all', 'data-turbolinks-track' => true %>
+	<% else %>
+		<%= stylesheet_link_tag 'rich', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<% end %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
 

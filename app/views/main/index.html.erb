@@ -13,7 +13,7 @@
 		<a href="#contact">contact</a>
 	</li>
 	<li id="plain-text-style">
-		<% if params.include? 'style' %>
+		<% if params['style'] == 'plain' %>
 			<a href="/">styled</a>
 		<% else %>
 			<a href="/?style=plain">plain text</a>
@@ -21,8 +21,8 @@
 	</li>
 </ul>
 <div class="section" id="about">
-	<h1>i make poopies</h1>
-	<p>most of the time (but not all the time)</p>
+	<h2>something here</h2>
+	<p>and also here i guess</p>
 	<p>github</p>
 	<p>email</p>
 	<div class="portrait"></div>
@@ -32,10 +32,12 @@
 	<ul class="projects">
 		<% @projects.each do |project| %>
 		<li class="project surface">
-			<div class="preview">
-				<img src="<%= asset_path 'test_image.png' %>" alt="<% project.name %> preview image">
-			</div>
-			<div class="title"><%= project.name %></div>
+			<% if params['style'] != 'plain' %>
+				<div class="preview">
+					<img src="<%= asset_path 'test_image.png' %>" alt="<% project.name %> preview image">
+				</div>
+			<% end %>
+			<h2 class="title"><%= project.name %></h2>
 			<div class="description"><%= project.description %></div>
 		</li>
 		<% end %>
