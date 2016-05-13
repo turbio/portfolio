@@ -1,77 +1,149 @@
 $font-stack: Helvetica, sans-serif;
 
-$background-color: #2196F3;
-$background-text-color: #fff;
+$surface-background: #fff;
+$surface-color: #000;
 
-$content-background-color: #fff;
-$content-text-color: #000;
+$surface-width: 960px;
 
-$content-width: 960px;
+$mobile-width: 450px;
+
+$navbar-background: #2196F3;
+$about-color: $navbar-background;
+$projects-color: #4CAF50;
+$skills-color: #FF9800;
+$contact-color: #607D8B;
 
 @mixin shadow(){
 	box-shadow: 0 0 5px rgba(0, 0, 0, .5);
 }
 
 body{
-	max-width: $content-width;
-	margin: 1em auto;
+	margin: 0;
+	padding: 0;
 	font: 100% $font-stack;
-	background: $background-color;
-	color: $background-text-color;
 }
 ol, ul{
+	list-style-type: none;
 	margin: 0;
 	padding: 0;
 }
-.header{
-	margin: 1em;
-	h1{
-		font-weight: lighter;
-	}
-}
-.centered-container{
-	@include shadow;
-	background: $content-background-color;
-	padding: 1em;
-	color: #000;
-}
-.projects{
-	text-align: center;
-	/*display: flex;*/
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: flex-start;
+#navbar{
+	position: fixed;
+	width: 100%;
+	padding: .5em;
+	text-align: right;
 
-	.last-line-fill{
-		@extend .project;
-		height: 0;
-		display: none;
+	color: #fff;
+	background: $navbar-background;
+
+	transition: box-shadow 200ms;
+
+	h1{
+		margin: 0;
+		float: left;
+		font-weight: lighter;
+		text-align: left;
 	}
+	li{
+		display: inline-block;
+		padding: .5em;
+	}
+	a{
+		color: #fff;
+		text-decoration: none;
+		&:hover{
+
+		}
+	}
+	#plain-text-style{
+		float: right;
+		margin-right: 1em;
+	}
+	&.nav-shadow{
+		box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+	}
+}
+.section{
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	width: 100%;
+	display: inline-block;
+
+	>h1.section-header{
+		margin: 0;
+		margin-top: 1em;
+		margin-left: 1em;
+	}
+	&#about{
+		display: table-cell;
+
+		vertical-align: middle;
+		text-align: center;
+
+		/*padding-top: 4em;*/
+
+		height: 100vh;
+		width: 100vw;
+
+		background-color: $about-color;
+
+		.portrait{
+			@include shadow;
+
+			display: inline-block;
+
+			width: 5em;
+			height: 5em;
+
+			background: url("portrait.png");
+			background-position: center;
+			background-size: 100%;
+
+			border: solid #fff 2px;
+			border-radius: 50%;
+		}
+	}
+	&#projects{
+		background-color: $projects-color;
+	}
+	&#skills{
+		background-color: $skills-color;
+	}
+	&#contact{
+		background-color: $contact-color;
+	}
+}
+.surface{
+	@include shadow;
+	margin: 1em;
+	padding: 1em;
+	max-width: $surface-width;
+
+	color: $surface-color;
+	background: $surface-background;
 }
 .project{
-	@include shadow;
 	display: inline-block;
-	width: 12em;
-	margin: 1em;
 	vertical-align: top;
 
-	background: #fff;
+	padding: 0;
+
+	width: 12em;
 
 	>*{
-		margin: 1em;
-	}
-	.title{
-		font-weight: bold;
+		margin: .5em;
 	}
 	.preview{
-		margin-left: 0;
-		margin-right: 0;
-		height: 8em;
+		margin: 0;
 		overflow: hidden;
 		img{
 			width: 100%;
 		}
 	}
-	.description{
+	.about{
+	}
+	.title{
+		font-weight: bold;
 	}
 }

@@ -1,19 +1,73 @@
-<div class="header">
+<ul id="navbar">
 	<h1>Mason Clayton</h1>
+	<li>
+		<a href="#about">about</a>
+	</li>
+	<li>
+		<a href="#projects">projects</a>
+	</li>
+	<li>
+		<a href="#skills">skills</a>
+	</li>
+	<li>
+		<a href="#contact">contact</a>
+	</li>
+	<li id="plain-text-style">
+		<% if params.include? 'style' %>
+			<a href="/">styled</a>
+		<% else %>
+			<a href="/?style=plain">plain text</a>
+		<% end %>
+	</li>
+</ul>
+<div class="section" id="about">
+	<h1>i make poopies</h1>
+	<p>most of the time (but not all the time)</p>
+	<p>github</p>
+	<p>email</p>
+	<div class="portrait"></div>
 </div>
-<div class="centered-container">
+<div class="section" id="projects">
+	<h1 class="section-header">projects</h1>
 	<ul class="projects">
 		<% @projects.each do |project| %>
-		<li class="project">
+		<li class="project surface">
+			<div class="preview">
+				<img src="<%= asset_path 'test_image.png' %>" alt="<% project.name %> preview image">
+			</div>
 			<div class="title"><%= project.name %></div>
-			<div class="preview"><img src="<%= asset_path 'test_image.png' %>" alt="<% project.name %> preview image"></div>
 			<div class="description"><%= project.description %></div>
 		</li>
 		<% end %>
-		<!-- kind of a hack but these fills up the remaining space in the last row
-		in order to align the last items to the left-->
-		<li class="last-line-fill"></li>
-		<li class="last-line-fill"></li>
-		<li class="last-line-fill"></li>
 	</ul>
+</div>
+<div class="section" id="skills">
+	<h1 class="section-header">skills</h1>
+	<div class="surface">
+		<ul>
+			<h2>frontend</h2>
+			<li>face</li>
+			<li>stomach</li>
+			<li>skin</li>
+		</ul>
+		<ul>
+			<h2>backend</h2>
+			<li>ass</li>
+			<li>back</li>
+			<li>hair</li>
+		</ul>
+	</div>
+</div>
+<div class="section" id="contact">
+	<h1 class="section-header">contact</h1>
+	<div class="surface">
+		<ul>
+			<li>idk which one, maybe ab test it?</li>
+			<li><a href="mailto:me@masonclayton.com">me@masoncalyton.com</a></li>
+			<li><a href="mailto:contact@masonclayton.com">contact@masoncalyton.com</a></li>
+			<li><a href="mailto:mason@masonclayton.com">mason@masoncalyton.com</a></li>
+			<li><a href="tel:+11231231234">(123) 123-1234</a>?</li>
+			<li>maybe a contact form here?</li>
+		</ul>
+	</div>
 </div>

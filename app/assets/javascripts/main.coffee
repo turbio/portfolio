@@ -1,3 +1,9 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+	$('#navbar > h1').css('font-size', (2 + ((100 - window.scrollY) / 20)) + 'em');
+	$(window).scroll (event) ->
+		if window.scrollY <= 100
+			$('#navbar').removeClass('nav-shadow')
+			$('#navbar > h1').css('font-size', (2 + ((100 - window.scrollY) / 20)) + 'em');
+		else
+			$('#navbar').addClass('nav-shadow')
+			$('#navbar > h1').css('font-size', '2em');
