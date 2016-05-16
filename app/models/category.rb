@@ -7,4 +7,8 @@ class Category < ActiveRecord::Base
 	def self.top_level
 		where(parent: nil)
 	end
+
+	def to_s
+		name
+	end
 end
