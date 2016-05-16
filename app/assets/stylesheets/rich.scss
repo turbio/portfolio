@@ -63,17 +63,15 @@ ol, ul{
 		box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 	}
 }
-.section{
+.page-section{
 	margin: 0;
-	padding: 0;
+	padding: 2em;
+
 	color: #fff;
-	width: 100%;
-	display: inline-block;
 
 	>h1.section-header{
 		margin: 0;
-		margin-top: 1em;
-		margin-left: 1em;
+		text-align: left;
 	}
 	&#about{
 		display: table-cell;
@@ -87,22 +85,6 @@ ol, ul{
 		width: 100vw;
 
 		background-color: $about-color;
-
-		.portrait{
-			@include shadow;
-
-			display: inline-block;
-
-			width: 5em;
-			height: 5em;
-
-			background: url("portrait.png");
-			background-position: center;
-			background-size: 100%;
-
-			border: solid #fff 2px;
-			border-radius: 50%;
-		}
 	}
 	&#projects{
 		background-color: $projects-color;
@@ -114,16 +96,43 @@ ol, ul{
 		background-color: $contact-color;
 	}
 }
+.portrait{
+	@include shadow;
+
+	display: inline-block;
+
+	width: 5em;
+	height: 5em;
+
+	background: url("portrait.png");
+	background-position: center;
+	background-size: 100%;
+
+	border: solid #fff 2px;
+	border-radius: 50%;
+}
 .surface{
 	@include shadow;
-	margin: 1em;
+
+	margin-top: 1em;
+	margin-left: auto;
+	margin-right: auto;
 	padding: 1em;
+
 	max-width: $surface-width;
+	text-align: left;
 
 	color: $surface-color;
 	background: $surface-background;
 }
+.projects-container{
+	max-width: $surface-width;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center
+}
 .project{
+	margin: 1em;
 	display: inline-block;
 	vertical-align: top;
 
