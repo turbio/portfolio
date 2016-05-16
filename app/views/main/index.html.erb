@@ -46,11 +46,7 @@
 <div class="page-section" id="skills">
 	<h1 class="section-header">skills</h1>
 	<div class="surface">
-		<ul>
-			<% @skills.each do |skill| %>
-				<li><%= skill.name %></li>
-			<% end %>
-		</ul>
+		<%= category_tree @categories.top_level %>
 	</div>
 </div>
 <div class="page-section" id="contact">
