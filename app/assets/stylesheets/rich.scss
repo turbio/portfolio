@@ -65,12 +65,13 @@ ol, ul{
 }
 .page-section{
 	margin: 0;
-	padding: 2em;
+	padding-top: 2em;
+	padding-bottom: 2em;
 
 	color: #fff;
 
 	>h1.section-header{
-		margin: 0;
+		margin: 0 2em;
 		text-align: left;
 	}
 	&#about{
@@ -162,20 +163,24 @@ ol, ul{
 	box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
 	transition: box-shadow 150ms;
 
+	border-radius: 0.25em;
+
 	&:hover{
 		box-shadow: 2px 2px 8px rgba(0, 0, 0, .5);
 	}
 }
 #skills{
 	h3{
-		margin: 0;
-		margin-top: 1em;
-		margin-left: 1em;
+		margin: .5em;
 		color: rgba(0, 0, 0, .5);
 		font-weight: normal;
 	}
 	ul{
 		margin-left: 1em;
+		margin-top: 1em;
+		margin-bottom: 1em;
+
+		padding-left: 1em;
 		border-left: solid 2px rgba(0, 0, 0, .25);
 	}
 	li{
@@ -183,14 +188,12 @@ ol, ul{
 
 		display: inline-block;
 
-		margin: .5em;
+		margin: .25em;
 		padding: .5em;
 
 		font-size: 1.25em;
 
-		background-color: teal;
+		background-color: #607D8B;
 		color: #fff;
-
-		border-radius: 3px;
 	}
 }
