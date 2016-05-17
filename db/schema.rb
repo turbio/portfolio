@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516155329) do
+ActiveRecord::Schema.define(version: 20160517161015) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -21,16 +21,6 @@ ActiveRecord::Schema.define(version: 20160516155329) do
   end
 
   add_index "categories", ["parent_id"], name: "index_categories_on_parent_id"
-
-  create_table "categories_skills", force: :cascade do |t|
-    t.integer  "category_id"
-    t.integer  "skill_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  add_index "categories_skills", ["category_id"], name: "index_categories_skills_on_category_id"
-  add_index "categories_skills", ["skill_id"], name: "index_categories_skills_on_skill_id"
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"
@@ -42,8 +32,11 @@ ActiveRecord::Schema.define(version: 20160516155329) do
 
   create_table "skills", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "category_id"
   end
+
+  add_index "skills", ["category_id"], name: "index_skills_on_category_id"
 
 end
