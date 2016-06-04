@@ -1,4 +1,6 @@
 class Project < ActiveRecord::Base
+	has_and_belongs_to_many :skills
+
 	#correctly capitalize the names of projects
 	def name
 		read_attribute(:name).split.map do |w| w.capitalize end.join ' ' if read_attribute(:name)

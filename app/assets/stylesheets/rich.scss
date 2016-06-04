@@ -1,4 +1,4 @@
-$font-stack: Helvetica, sans-serif;
+$font-stack: 'Lato','Helvetica Neue','Arial',sans-serif;;
 
 $surface-background: #fff;
 $surface-color: #000;
@@ -28,8 +28,7 @@ ol, ul{
 	padding: 0;
 }
 #navbar{
-	position: fixed;
-	width: 100%;
+	/*position: fixed;*/
 	padding: .5em;
 	text-align: right;
 
@@ -46,7 +45,10 @@ ol, ul{
 	}
 	li{
 		display: inline-block;
-		padding: .5em;
+		&:not(:last-child):after{
+			content: '/';
+			display: inline-block;
+		}
 	}
 	a{
 		color: #fff;
@@ -63,6 +65,26 @@ ol, ul{
 		box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 	}
 }
+#about{
+	vertical-align: middle;
+	text-align: center;
+
+	/*padding-top: 4em;*/
+
+	/*height: 100vh;*/
+	/*width: 100vw;*/
+
+	background-color: $about-color;
+}
+#projects{
+	/*background-color: $projects-color;*/
+}
+#skills{
+	/*background-color: $skills-color;*/
+}
+#contact{
+	/*background-color: $contact-color;*/
+}
 .page-section{
 	margin: 0;
 	padding-top: 2em;
@@ -73,28 +95,6 @@ ol, ul{
 	>h1.section-header{
 		margin: 0 2em;
 		text-align: left;
-	}
-	&#about{
-		display: table-cell;
-
-		vertical-align: middle;
-		text-align: center;
-
-		/*padding-top: 4em;*/
-
-		height: 100vh;
-		width: 100vw;
-
-		background-color: $about-color;
-	}
-	&#projects{
-		background-color: $projects-color;
-	}
-	&#skills{
-		background-color: $skills-color;
-	}
-	&#contact{
-		background-color: $contact-color;
 	}
 }
 .portrait{
@@ -125,6 +125,11 @@ ol, ul{
 
 	color: $surface-color;
 	background: $surface-background;
+
+	&.nofill{
+		background: none;
+		box-shadow: none;
+	}
 }
 .projects-container{
 	max-width: $surface-width;
@@ -155,6 +160,25 @@ ol, ul{
 	}
 	.title{
 		font-weight: bold;
+	}
+}
+.tech-stack{
+	font-size: .75em;
+	*{
+		display: inline-block;
+		background: rgba(0, 0, 0, .25);
+		color: #fff;
+
+		margin: 0.125em 0;
+		padding: 0 0.25em;
+
+		border-radius: 0.25em;
+
+		&:before{
+			height: 10px;
+			width: 10px;
+			border: 2px black solid;
+		}
 	}
 }
 @mixin button(){
