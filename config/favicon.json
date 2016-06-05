@@ -1,0 +1,39 @@
+{
+    "master_picture": "app/assets/images/favicon-trans.png",
+    "favicon_design": {
+        "ios": {
+            "picture_aspect": "background_and_margin",
+            "background_color": "#ffffff",
+            "margin": "0%"
+        },
+        "desktop_browser": [
+
+        ],
+        "windows": {
+            "picture_aspect": "no_change",
+            "background_color": "#da532c",
+            "on_conflict": "override"
+        },
+        "android_chrome": {
+            "picture_aspect": "shadow",
+            "theme_color": "#ffffff",
+            "manifest": {
+                "name": "Mason Clayotn",
+                "start_url": "http:\/\/masonclayton.com",
+                "display": "standalone",
+                "orientation": "not_set",
+                "on_conflict": "override",
+                "declared": true
+            }
+        },
+        "safari_pinned_tab": {
+            "picture_aspect": "black_and_white",
+            "threshold": 74.21875,
+            "theme_color": "#3db0d1"
+        }
+    },
+    "settings": {
+        "scaling_algorithm": "Lanczos",
+        "error_on_image_too_small": false
+    }
+}
